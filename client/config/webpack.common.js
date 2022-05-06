@@ -15,7 +15,7 @@ module.exports = {
     rules: [
       // Babel 파일 로더 설정
       {
-        test: /\.(js)$/,
+        test: /\.(ts|tsx|js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
