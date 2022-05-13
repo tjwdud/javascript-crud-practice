@@ -11,6 +11,7 @@ class Component {
     this.init();
     this.render();
     this.mounted();
+    this.setEvent();
   }
   init() {
     return {};
@@ -22,7 +23,6 @@ class Component {
     observe(() => {
       this.container.innerHTML = this.markup();
       this.renderCallback();
-      this.setEvent();
     });
   }
 

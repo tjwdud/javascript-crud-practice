@@ -13,7 +13,6 @@ const getQuery = () => {
 };
 
 const pathValidation = (currentPath, routePath) => {
-  console.log(currentPath, routePath);
   if (currentPath.length !== routePath.length) return false;
   const params = {};
   let index = 0;

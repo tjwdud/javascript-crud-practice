@@ -9,7 +9,6 @@ class Router {
     this.RouterContext = RouterContext;
     this.initRouter();
     this.route();
-    console.log(target, routes);
   }
 
   initRouter() {
@@ -34,7 +33,7 @@ class Router {
 
   route() {
     const currentPath = this.RouterContext.state.pathname.slice(1).split("/");
-    console.log(currentPath, "dir;");
+
     for (let i = 0; i < this.routes.length; i += 1) {
       const routePath = this.routes[i].path.slice(1).split("/");
       // const { loginRequired } = this.routes[i];
