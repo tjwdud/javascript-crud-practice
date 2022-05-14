@@ -21,5 +21,18 @@ export const createStore = (reducer) => {
 
   const getState = () => frozenState;
 
-  return { getState, dispatch };
+  const createThunkMiddleware = (extraArgument) => {
+    return ({ dispatch, getState }) =>
+      (next) =>
+      (action) => {
+        if (typeof action === "function") {
+          // 2번
+          return action(dispatch, getState, extraArgument);
+        }
+
+        return next(action);
+      };
+  };
+
+  return { getState, dispatch, createThunkMiddleware };
 };
