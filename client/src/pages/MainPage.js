@@ -66,6 +66,11 @@ export default class MainPage extends Component {
     new ChildComponent({
       container: child,
     });
+  render() {
+    observe(() => {
+      this.container.innerHTML = this.markup();
+      this.renderCallback();
+    });
   }
 
   setEvent() {
