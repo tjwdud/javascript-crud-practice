@@ -58,13 +58,18 @@ export default class MainPage extends Component {
   }
 
   renderCallback() {
+    const post = this.container.querySelector(".post1");
+    store.getState().post.forEach((el) => {
+      post.append(el.title);
+    });
     const child = this.container.querySelector(".child");
     new ChildComponent({
       container: child,
     });
-    const post = this.container.querySelector(".post");
-    store.getState().post.forEach((el) => {
-      post.append(el.title);
+  render() {
+    observe(() => {
+      this.container.innerHTML = this.markup();
+      this.renderCallback();
     });
   }
 

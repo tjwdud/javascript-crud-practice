@@ -20,10 +20,8 @@ class Component {
   mounted() {}
 
   render() {
-    observe(() => {
-      this.container.innerHTML = this.markup();
-      this.renderCallback();
-    });
+    this.container.innerHTML = this.markup();
+    this.renderCallback();
   }
 
   markup() {}
