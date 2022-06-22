@@ -1,7 +1,10 @@
 import Component from "../core/Component";
 // import { setA, setB, store } from "../store";
-import { setPost, store } from "../redux";
+import { setPost, setSort, store } from "../redux";
 import ChildComponent from "../component/ChildComponent";
+import { observe } from "../core/observe";
+import NonRelativeComponent from "../component/NonRelativeComponent";
+import { populateSort } from "./util";
 export default class MainPage extends Component {
   init() {
     this.postList = [
@@ -12,7 +15,7 @@ export default class MainPage extends Component {
         recruitmentStatus: "모집중",
         stacks: ["js", "efw"],
         views: 2,
-        marks: 50,
+        marks: 100,
       },
       {
         _id: "62747f80f2b86194926e0958",
